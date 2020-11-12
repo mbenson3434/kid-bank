@@ -46,7 +46,7 @@ export default function Header() {
           <h2>Kid Bank</h2>
           <nav>
             <Link className='login' to='/'>Home</Link> 
-            <Link onClick={push("/add-kid")} className='register' to='/add-kid'>Add</Link>
+            <Link onClick={()=>{push("/add-kid")}} className='register' to='/add-kid'>Add</Link>
           </nav>
         </StyledHeader>
     )
