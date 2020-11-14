@@ -5,9 +5,9 @@ import styled from 'styled-components';
 
 // --- Styled Components ---
 const StyledForm = styled.div `
-    border: 1px solid red;
     justify-content: center;
     display: flex;
+    padding: 3rem;
     
 
 input {
