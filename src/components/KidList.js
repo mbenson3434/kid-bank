@@ -1,12 +1,18 @@
-
+import Kid from './Kid';
 
 // Display a list of current kids
 
-const KidList = () => {
+const KidList = ({ kidList }) => {
 
     return (
         <div>
-            <h2>I'm a list of kid bank divs</h2>
+            {
+                kidList.map((kid, index) =>{
+                    return <Kid key={index} kid={kid}/>
+                })
+            }
+
+            <h2>{kidList.name}</h2>
         </div>
     )
 }
