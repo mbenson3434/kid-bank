@@ -2,13 +2,13 @@ import Kid from './Kid';
 
 // Display a list of current kids
 
-const KidList = ({ kidList }) => {
+const KidList = ({ kidList, setKidList }) => {
 
     return (
         <div>
             {
                 kidList.map((kid, index) =>{
-                    return <Kid key={index} kid={kid}/>
+                    return <Kid key={index} kid={kid} kidList={kidList} setKidList={setKidList}/>
                 })
             }
 

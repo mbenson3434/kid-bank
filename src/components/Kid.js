@@ -5,7 +5,6 @@ import styled from 'styled-components';
 const StyledKid = styled.div `
    
     display: flex;
-    flex-direction: column;
     margin: 2rem;
     border-radius: 10px;
     font-size: 2rem;
@@ -15,44 +14,54 @@ const StyledKid = styled.div `
         background-color: #FAC64C;
     }
 
-    .not-selected {
-        display: none;
+    .kid-name {
+        
+        width: 68%;
     }
-    .selected {
-        padding: 3rem;
-    }
-
-    #kid {
+    .kid-balance {
+        
         display: flex;
         justify-content: space-around;
+        width: 30%;
     }
-    .img {
-        border-radius: 5px;
-        width: 35%
+
+    .kid-balance button {
+        height: 3rem;
+        width: 3rem;
+        border-radius: 10px;
+        font-size: 2rem;
+        border: none;
+        align-self: center; 
+        background-color: #FAC64C;
     }
-    
-    
+
+    .kid-balance button:hover {
+        background-color: #FABC2A;
+    }
+
     
 `
-const Kid = ({ kid }) => {
-    const [selected, setSelected] = useState(false);
+const Kid = ({ kid, kidList, setKidList }) => {
+   const [balance, setBalance] = useState(0);
 
-    const toggleSelected = () => {
-        setSelected(!selected);
+    const add = () => {
+       setBalance(balance + 1);
+       
+    }
+
+    const subtract = () => {
+        setBalance(balance - 1);
     }
 
     return (
-        <StyledKid onClick={toggleSelected}>
-            <div id='kid'>
-                <h3>{kid.name}</h3>
-                <h3>{kid.balance}</h3>
-            </div>
-            <div id="add-money">
-            {
-               <div className={`${selected ? "selected" : 'not-selected'}`}>
-                   <img className="img" src="/dollarbill.png" alt="" />
-               </div>  
-            }
+        <StyledKid>
+            <div className="kid-name">
+                <h3>{kid.name}</h3>   
+            </div>  
+            <div className="kid-balance">
+                <button onClick={add}>+</button>
+                <h3>${balance}</h3>
+                <button onClick={subtract}>-</button>
             </div>
         </StyledKid>
     )

@@ -9,16 +9,17 @@ import KidList from './components/KidList';
 
 function App() {
   const [kidList, setKidList] = useState([]);
+
   return (
     <div className="App">
       <Router>
         <Header />
         
         <Route exact path="/" component={KidList}>
-          <KidList kidList={kidList} />
+          <KidList kidList={kidList} setKidList={setKidList} />
         </Route>
 
-        <Route exact path="/add-kid" component={AddKid}>
+        <Route path="/add-kid" component={AddKid}>
           <AddKid kidList={kidList} setKidList={setKidList} />
         </Route>
         

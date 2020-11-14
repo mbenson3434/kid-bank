@@ -5,13 +5,20 @@ import styled from 'styled-components';
 
 // --- Styled Components ---
 const StyledForm = styled.div `
+    border: 1px solid red;
+    justify-content: center;
+    display: flex;
+    
 
 input {
     padding: 1rem;
     font-size: 2rem;
     text-align: left;
-    margin-top: 4rem;
     border: none;
+}
+
+input:active {
+    outline: none;
 }
 
 button {
@@ -33,8 +40,7 @@ button:hover {
 
 ` // --- Styled Components ---
 const initialValues = {
-        name: '',
-        balance: 0
+        name: ''
     }
     
 const AddKid = ({ kidList, setKidList }) => {
