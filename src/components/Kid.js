@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+// --- NEED to combine the state into one save both the balance and the name to local storage. 
+
 
 //Add a div that displays a kid, total $ in bank and lets them add $1 or subtract $1 by clicking on the pictures of the one dollar bill. 
 const StyledKid = styled.div `
@@ -46,11 +48,12 @@ const Kid = ({ kid, kidList, setKidList }) => {
 
     const add = () => {
        setBalance(balance + 1);
-       
+       localStorage.setItem("balance", JSON.stringify(balance));
     }
 
     const subtract = () => {
         setBalance(balance - 1);
+        localStorage.setItem("balance", JSON.stringify(balance));
     }
 
     return (

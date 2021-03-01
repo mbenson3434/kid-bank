@@ -31,6 +31,9 @@ nav a {
 h2 {
     font-weight: 800;
 }
+nav a:hover {
+    background-color: #FABC2A;
+}
 @media (max-width: 700px) {
     flex-direction: column;
     align-items: center;
