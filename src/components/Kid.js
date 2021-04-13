@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 // --- NEED to combine the state into one save both the balance and the name to local storage. 
 
-
-//Add a div that displays a kid, total $ in bank and lets them add $1 or subtract $1 by clicking on the pictures of the one dollar bill. 
 const StyledKid = styled.div `
    
     display: flex;
@@ -11,22 +9,18 @@ const StyledKid = styled.div `
     border-radius: 10px;
     font-size: 2rem;
     background-color: #FABC2A;
+    justify-content: space-around;
 
     :hover {
         background-color: #FAC64C;
     }
-
     .kid-name {
-        
-        width: 68%;
+        width: 62%;
     }
     .kid-balance {
-        
         display: flex;
         justify-content: space-around;
-        width: 30%;
     }
-
     .kid-balance button {
         height: 3rem;
         width: 3rem;
@@ -35,13 +29,15 @@ const StyledKid = styled.div `
         border: none;
         align-self: center; 
         background-color: #FAC64C;
+        margin: 0 1rem;
     }
-
     .kid-balance button:hover {
         background-color: #FABC2A;
     }
-
-    
+    @media (max-width: 400px) {
+    flex-direction: column;
+    align-items: center;
+    }
 `
 const Kid = ({ kid, kidList, setKidList }) => {
    const [balance, setBalance] = useState(0);

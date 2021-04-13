@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        <h1 className='instructions'>Kid Bank keeps track of your children's allowance.</h1>
+        <h1 className='instructions'>Keep track of your allowance!</h1>
         <h2 className='instructions'>Click ADD to start!</h2>
         <Route exact path="/" component={KidList}>
           <KidList kidList={kidList} setKidList={setKidList} />
